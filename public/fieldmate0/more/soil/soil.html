@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        #google_translate_element {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999; 
+        }
+      .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #search-input {
+            padding: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: rgb(246, 248, 246);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("soil.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .result-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .box {
+            width: 400px;
+            
+            padding: 40px;
+            border: 2px solid white;
+            border-radius: 30px;
+            position: relative;
+            backdrop-filter: saturate(100%) blur(10px);
+      background-color: rgba(25, 219, 83, 0.401);
+      box-shadow: 0 0 60px #c3cf22e4;
+       transition: .5s
+        }
+        .box h3 {
+            font-size: 36px;
+            font-weight: 680;
+            color: #000000;
+        }
+        label {
+            display: block;
+            width: 200px;
+            background: #fff;
+            padding: 12px;
+            margin: 10px auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+        .search-button {
+            background-color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #ccc;
+        }
+        .results {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+        }
+        .suggestions {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+        .suggestion-item {
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background-color: #f2f2f2;
+        }
+        .search-input:focus + .suggestions {
+            display: block;
+        }
+        /* Change the color of the three bold headings to black */
+        .place-info strong {
+            font-weight: bold;
+            color: black;
+            display: block;
+            margin-top: 10px;
+        }
+        .place-info {
+            color: white;
+        }
+      
+        .hd{
+            
+           
+            background: rgb(255, 255, 255);
+            max-width:100%;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            backdrop-filter: saturate(180%) blur(5px);
+            background-color: rgba(25, 219, 83, 0.401);
+           box-shadow: 0 0 20px #c3cf22e4;
+           transition: .5s;
+          
+      
+           
+           
+   }
+
+   .nav1{
+            font-size: 20x;
+            font-weight: bold;
+            background: green;
+            width:10px;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            
+        }
+
+        .fm{
+     
+     border-radius: 50%;
+     width:70px;
+     margin:auto;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+  
+    <div class="hd">
+
+        <div>
+        <img class="fm" align="left" src="logo1 (1) (1).png" alt="">
+      </div>
+      <h1 >Soil And Crop Info</h1>
+      
+      <div  align="right">
+        <a href="../../index.html" class="nav1">home</a> 
+        <a href="../../new_weather/new_weather.html" class="nav1">Weather</a> 
+        <a href="../../virus/virus.html" class="nav1">Virus Detection</a> 
+
+        <a href="../more/more.html" class="nav1">More</a> 
+        
+      </div>
+      </div>
+
+<div class="card">
+<div class="container">
+    <div class="search-container">
+        <div class="box">
+            <h1>Place Search</h1>
+            <form id="search-form">
+                <input type="text" id="place-input" class="search-input" placeholder="Enter a place name" required>
+                <button type="submit" class="search-button">Search</button>
+                <div class="suggestions" id="suggestions"></div>
+            </form>
+        </div>
+    </div>
+    <div class="result-container">
+        <div class="box">
+            <h3>Place Information</h3>
+            <!-- Display place information here -->
+            <div class="place-info" id="place-info"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script>
+    const searchForm = document.getElementById("search-form");
+    const placeInput = document.getElementById("place-input");
+    const suggestions = document.getElementById("suggestions");
+    const placeInfo = document.getElementById("place-info");
+    const searchContainer = document.querySelector(".search-container");
+    const resultContainer = document.querySelector(".result-container");
+
+    const andhraPlaceSuggestions = [
+        "Anantapur",
+        "Chittoor",
+        "East Godavari",
+        "Guntur",
+        "Krishna",
+        "Kurnool",
+        "Nellore",
+        "Prakasam",
+        "Srikakulam",
+        "Vizag",
+        "Vizianagaram",
+        "West Godavari",
+        "YSR Kadapa",
+        // Add more famous places in Andhra Pradesh as needed
+    ];
+
+    placeInput.addEventListener("input", () => {
+        const userInput = placeInput.value.toLowerCase();
+        suggestions.innerHTML = "";
+
+        const filteredSuggestions = andhraPlaceSuggestions.filter((place) =>
+            place.toLowerCase().includes(userInput)
+        );
+
+        filteredSuggestions.forEach((suggestion) => {
+            const suggestionItem = document.createElement("div");
+            suggestionItem.textContent = suggestion;
+            suggestionItem.classList.add("suggestion-item");
+            suggestionItem.addEventListener("click", () => {
+                placeInput.value = suggestion;
+                suggestions.innerHTML = "";
+                searchContainer.style.display = "none";
+                resultContainer.style.display = "block";
+                displayPlaceInfo(suggestion);
+            });
+            suggestions.appendChild(suggestionItem);
+        });
+    });
+
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const placeName = placeInput.value.toLowerCase();
+        suggestions.innerHTML = "";
+        searchContainer.style.display = "none";
+        resultContainer.style.display = "block";
+        displayPlaceInfo(placeName);
+    });
+
+    const andhraPlaceInfoData = {
+        anantapur: " Red soil, black soil\nGroundnut, cotton\nAvocado, quinoa",
+        chittoor: " Red sandy soil, loamy soil\nTomato, banana\nBlueberries, asparagus",
+        eastgodavari: "Alluvial soil, sandy soil\nRice, coconut\nDragon fruit, kiwi",
+        guntur: "Black soil, sandy loam\nChillies, tobacco\nBroccoli, artichoke",
+        krishna: "Alluvial soil, black soil\nMango, sugarcane\nPapaya, passion fruit",
+        kurnool: "Red soil, clayey soil\nMaize, sunflower\nTurmeric, saffron",
+        nellore: "Red sandy soil, black soil\nPaddy, pulses\nPistachios, hazelnuts",
+        prakasam: "Red sandy soil, black clay soil\nTobacco, cotton\nLavender, chamomile",
+        srikakulam: "Sandy loam, red sandy soil\nRice, cashew\nPeaches, apricots",
+        vizag: "Sandy loam, laterite soil\nCashew, paddy\nMacadamia nuts, lychee",
+        vizianagaram: "Sandy soil, loamy soil\nSugarcane, coconut\nPomegranate, goji berries",
+        westgodavari: "Alluvial soil, clayey soil\nPaddy, sugarcane\nCherries, olives",
+        ysrkadapa: "Red soil, black soil\nGroundnut, sunflower\nAlmonds, walnuts\n",
+        // Add more information about places in Andhra Pradesh as needed
+    };
+
+    function displayPlaceInfo(placeName) {
+        if (andhraPlaceInfoData.hasOwnProperty(placeName)) {
+            const info = andhraPlaceInfoData[placeName];
+            const infoArray = info.split("\n");
+            if (infoArray[0]) {
+                placeInfo.innerHTML = `<strong>Soil Types:</strong>${infoArray[0]}`;
+            }
+
+            if (infoArray[1]) {
+                placeInfo.innerHTML += `<strong>Popular Crops:</strong>${infoArray[1]}`;
+            }
+            if (infoArray[2]) {
+                placeInfo.innerHTML += `<strong>Popular but not extensive Crops:</strong>${infoArray[2]}`;
+            }
+        } else {
+            placeInfo.textContent = "Information not available for this place.";
+        }
+    }
+</script>
+<div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,te,ta,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+</body>
+</html>

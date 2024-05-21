@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FieldMate</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+
+  <style>
+   
+
+    .cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .image {
+        max-width: 50%;
+        height: auto;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+  
+    .image:hover {
+        transform: scale(1.1);
+    }
+
+    .text, .text1 {
+        max-width: 45%;
+        text-align: justify;
+        font-family: sans-serif;
+        font-size: large;
+    }
+
+    p {
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        font-family: "Times New Roman", serif;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 24px; 
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    b {
+        font-family: sans-serif;
+        font-weight: normal; 
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        .section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image {
+            max-width: 100%;
+        }
+
+        .text, .text1 {
+            max-width: 100%;
+            padding-right: 0;
+        }
+    }
+
+
+
+
+    
+  
+ 
+
+    .feature {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .feature:hover {
+        transform: scale(1.05);
+    }
+
+    .feature-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #030202;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Add underline animation */
+    .feature-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the distance of the underline from the text */
+        width: 100%;
+        height: 2px;
+        background-color: #62cd50; /* Change to your desired underline color */
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .feature-title:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .feature-description {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    /* Add overall animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animated-title {
+        animation: fadeInUp 1s ease;
+    }
+    #google_translate_element {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999; 
+}
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#search-input {
+  padding: 5px;
+  width: 300px;
+  font-size: 16px;
+}
+
+#search-button {
+  padding: 5px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+        
+
+    
+    
+   
+    
+</style>
+   
+
+
+
+  <style>
+    .flxcnt{
+      display: flex;
+      gap:10px;
+    }
+
+    .gap{
+      position: relative;
+      height: 300px;
+    }
+
+    .logofm{
+      width: 500px;
+      padding: 20px;
+      margin-bottom:20px;
+    }
+    
+    .fm{
+     
+      border-radius: 50%;
+      width: 125px;
+      margin:auto;
+      
+    }
+    .myfx{
+      display: flex;
+      gap:20px;
+    }
+
+
+      .main__bg {
+        background-image: linear-gradient(-60deg, #84b80a99 60%, #09a711 60%);
+        animation: slide 3s ease-in-out infinite alternate;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -50%;
+        right: -50%;
+        opacity: 0.5;
+        z-index: -1;
+        }
+         
+        .layer1 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+        }
+         
+        .layer2 {
+        animation-duration: 5s;
+        }
+         
+        @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+        100% {
+            transform: translateX(25%);
+        }
+        }
+
+        .bbt{
+          background-color: #f46f1c;
+        }
+        .animate__animated{
+          font-size: larger;
+        }
+        .fixed-top{
+          position: relative;
+        }
+
+
+  </style>
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="myfx">
+        <div>
+      <img class="fm" src="assets/img/logo1 (1) (1).png" alt="">
+    </div>
+      
+       <div>
+        <br>
+        <br>
+      
+      <h1 class="logo"><a href="index.html">FieldMate</a></h1>
+    </div>
+    </div>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href=index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">HOME</a></li>
+          <li><a class="nav-link scrollto" href="new_weather/new_weather.html">WEATHER FORECAST</a></li>
+          <li><a class="nav-link scrollto" href="virus/virus.html">VIRUS DETECTION</a></li>
+          <li><a class="nav-link scrollto " href="more/more.html">MORE</a></li>
+
+         </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+      <!-- Slide 1 -->
+
+      <div class="gap">
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>FIELDMATE</span></h2>
+          <p class="animate__animated animate__fadeInUp">FieldMate is a farmer-focused website with three core features: real-time weather updates, advanced farming techniques, and plant virus detection. The site will provide weather data, expert farming advice, and a tool for identifying plant diseases. It will be user-friendly and secure, offering essential resources for farmers.</p>
+          <a href="#about" class=" bbt btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">WEATHER FORECAST</h2>
+          <p class="animate__animated animate__fadeInUp">"Get real-time weather updates instantly on our website. Stay informed and make smart decisions with up-to-the-minute weather data."</p>
+          <a href="new_weather/new_weather.html" class="bbt btn-get-started animate__animated animate__fadeInUp scrollto">View</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">VIRUS DETECTION</h2>
+          <p class="animate__animated animate__fadeInUp">"Easily diagnose plant diseases by uploading a photo on our website. And that photo will be sent to an expert or an botanist so that he identifies the plant virus and suggest the solution."
+          </p>
+          <a href="virus/virus.html" class="bbt btn-get-started animate__animated animate__fadeInUp scrollto">View</a>
+        </div>
+      </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="carousel-container">
+              <h2 class="animate__animated animate__fadeInDown">MORE</h2>
+              <p class="animate__animated animate__fadeInUp">"Here we let farmers know about modern farming. We provide information about drones,smart irrigation….etc to get better yields, sharing success stories and practical tips."</p>
+              <a href="more/more.html" class="bbt btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+          </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+
+  <div class="main__bg"></div>
+  <div class="main__bg layer1"></div>
+  <div class="main__bg layer2"></div>
+
+   
+
+    <!-- ======= About Us Section ======= -->
+    <div class="bg">
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+      
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        
+          
+
+
+
+
+
+
+
+     
+ </div>
+
+ 
+ <div class="cont">
+     <div class="section">
+       <img class="image" src="assets/about/filedmate green logo.png" alt="Image 1">
+       <div class="text">
+         <h1 >Our Mission:</h1>
+         
+         <p style="font-size: larger;"><b>At Field Mate, our mission is to revolutionize the way farming is practiced. We believe that by combining cutting-edge technology with age-old wisdom,we can help farmers achieve sustainable and bountiful harvests. We are committed to empowering you with the tools and knowledge you need to thrive.</b></p>
+       </div>
+     </div>
+   </div>
+   <div class="cont">
+     <div class="section">
+         
+       <div class="text">
+         <h1>Our Vision:</h1>
+      <p style="font-size: larger;" ><b>We envision a future where every farmer has access to the latest advancements in agriculture, enabling them to make informed decisions, increase yields, and reduce environmental impact.</b></p>          
+     </div>
+       <img class="image" src="assets/about/vision.jpeg" alt="Image 1">
+     </div>
+   </div>
+   <div class="cont">
+     <div class="section">
+       <img class="image" src="assets/about/mission.avif" alt="Image 3">
+       <div class="text1">
+         <h1>Our Commitment:</h1>
+         <b><p style="font-size: larger;">
+             Field Mate is committed to providing you with accurate, location-specific weather forecasts, early detection of crop diseases, and valuable resources on advanced farming techniques. Your success is our priority.             </p></b> 
+       </div>
+     </div>
+   </div>
+
+
+   <div class="feature">
+     <h1 class="feature-title animated-title">EXPLORE OUR FEATURES</h1>
+     <p class="feature-description">"Embark on a journey of discovery as you explore our features, where innovation meets functionality, and possibilities unfold."</p>
+ </div>
+
+
+   <div class="cont">
+        <!-- Weather Forecasting -->
+ <div class="section">
+     <img class="image" src="assets/about/weather.jpg" alt="Image 1" width="250px" height="250px" style="padding-left: 150px;">
+     <div class="text">
+        <h1 > Weather Forecasting:</h1>
+         <p style="padding-right: 120px;">At Field Mate, we understand that weather plays a pivotal role in the success of your agricultural endeavors. Our weather forecasting feature goes beyond basic weather information to provide you with a comprehensive and personalized experience.</p>
+     </div>
+ </div>
+ </div>
+ <div class="cont">
+ <!-- Virus Detection -->
+ <div class="section">
+     <img class="image" src="assets/about/vision.jpeg" alt="Image 2" width="500" height="250px">
+     <div class="text">
+        <h1>Virus Detection:</h1>
+         <p style="font-size:larger;">Protecting your crops from diseases is a top priority, and Field Mate is here to help with our advanced virus detection feature.</p>
+     </div>
+ </div>
+ 
+
+   <h1>1.Image Recognition Technology:</h1>
+   <b><p style="font-size:larger;">When you suspect a potential crop disease, simply upload an image of the affected plants through our user-friendly interface. Our system utilizes advanced image recognition technology to analyze the image and identify early signs of plant viruses</p></b>
+          <h1>2.Certified Specialists:</h1>
+   <b><p style="font-size:larger;">Once the image is uploaded, it's sent to a team of certified agricultural specialists with expertise in plant diseases. These specialists thoroughly review the image and conduct further analysis to confirm the diagnosis.</p></b> 
+   
+   
+   <h1>3.Expert Recommendations:</h1>
+    <a  href="virus/virus.html"  ><img class="image" src="assets/about/uplode.jpg" alt="Image 1" width="300" height="150px" style="border-radius: 50%;"></a>
+   <b><p style="font-size:larger;">After the analysis is complete, you'll receive expert recommendations and suggestions directly on the Field Mate website. These recommendations may include specific actions to take, such as treatment options, preventive measures, or changes in cultivation practices.</p></b>
+ </div>
+   <div class="cont">
+   <h2>Advanced Farming Techniques:</h2>
+   <img class="image" src="assets/about/drone.jpg" alt="Image 1" width="500px" height="300px">
+   <h3>Explore the exciting world of advanced farming techniques with Field Mate:</h3>
+   
+   <h3>1.Precision Farming Revolution:</h3>
+      <b><p style="font-size:larger;">Dive into the cutting-edge world of precision farming techniques, where technology meets agriculture. Discover how GPS-guided machinery, drones, and remote sensors are revolutionizing farming practices. Learn about precision planting, irrigation management, and yield monitoring to optimize resource usage and maximize crop yields while minimizing environmental impact.</p></b>
+   
+   <h3>2.Sustainable Agriculture Practices:</h3>
+   <b><p style="font-size:larger; font-family:Alkatra; "Helvetica Neue", Helvetica, sans-serif;">Discover sustainable agriculture techniques that are helping farmers protect the environment while maintaining productivity. Dive into methods such as crop rotation, organic farming, and integrated pest management. Explore how these practices promote soil health, reduce chemical inputs, and ensure the long-term viability of your farm.</p></b>
+   
+   <h3>3.Embracing Smart Technologies:</h3>
+   <b><p style="font-size:larger;">Unlock the potential of smart technologies in agriculture. Explore the world of IoT (Internet of Things), AI (Artificial Intelligence), and data analytics in farming. Learn how these technologies enable data-driven decision-making, predictive analysis, and real-time monitoring of crop conditions. Explore how autonomous vehicles and robotic farming equipment are changing the way we cultivate and harvest crops.</p></b>
+   
+   <h3 style="font-family:Alkatra;">Field Mate is your comprehensive resource for modern agriculture, offering everything you need to succeed in the ever-evolving agricultural landscape. Join us in embracing innovation, sustainability, and informed decision-making for a thriving farm. With Field Mate as your partner, you're equipped to navigate the challenges and opportunities of modern agriculture, ensuring a prosperous and sustainable future for your farming endeavors."</h3>
+</div>
+
+       
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div><!-- End About Us Section -->
+
+  
+  
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <div id="google_translate_element"></div>
+
+   
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+
+</html>

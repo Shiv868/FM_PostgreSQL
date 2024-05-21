@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Farming Techniques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(bg.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .imgbg{
+          grid-column: 1 / span 3;
+          grid-row: 1 / span 1;
+        }
+    .nav {
+            
+            display:grid;
+            
+        }
+
+        
+        .navbar-logo {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: auto ;
+        }
+
+     
+
+        
+
+        
+        .navbar-logo img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%; 
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+           
+            
+            
+        }
+       
+        .section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .image {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        
+        .image:hover {
+            transform: scale(1.1);
+        }
+
+        .text, .text1 {
+            max-width: 45%;
+            text-align: justify;
+            font-family: "Arial", sans-serif;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            font-family: "Times New Roman", serif;
+        }
+
+        h1 {
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        b {
+            font-weight: normal; 
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image {
+                max-width: 100%;
+            }
+
+            .text, .text1 {
+                max-width: 100%;
+                padding-right: 0;
+            }
+        }
+
+        
+        #google_translate_element {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999; 
+        }
+      .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        
+        #search-input {
+            padding: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        
+        #search-button {
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .image1{
+            width: 50vw;
+            height: 30vh;
+            border-radius: 25%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image1:hover {
+            transform: scale(1.1);
+        }
+        .mheading{
+          border-radius: 30px; 
+          width: 400px;
+          backdrop-filter: saturate(180%) blur(10px);
+        }
+        .main__bg {
+        background-image: linear-gradient(-60deg, #788b77ba 50%, #82f38293 50%);
+        animation: slide 3s ease-in-out infinite alternate;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -50%;
+        right: -50%;
+        opacity: 0.5;
+        z-index: -1;
+        }
+         
+        .layer1 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+        }
+         
+        .layer2 {
+        animation-duration: 5s;
+        }
+         
+        @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+        100% {
+            transform: translateX(25%);
+        }
+        }
+
+        .bttn{
+          border-radius: 20px;
+          background-color: rgb(240, 175, 34);
+          width: 100px;
+          height: 30px;
+          color: white;
+        }
+    </style>
+</head>
+    
+<body>
+  <div class="main__bg"></div>
+  <div class="main__bg layer1"></div>
+  <div class="main__bg layer2"></div>
+ 
+ <div class="nav">
+  
+  <div class="navbar-logo">
+      <img src="logo1 (1) (1).png" class="imgbg" alt=" Logo" />
+  </div>
+  <center><h1 class="mheading">Advanced Farming Technologies</h1></center>
+</div>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a heading...">
+        <button id="search-button">Search</button>
+    </div>
+   
+    </div>
+    <div class="container">
+        <div class="section">
+          <img class="image" src="percision agriculture.png" alt="Image 1">
+          <div class="text">
+            <a href="https://youtu.be/WhAfZhFxHTs?si=fy3rstRIsucNhuRM"> <button class="bttn">For Video</button></a>
+
+            <h1>Precision Agriculture</h1>
+            <b><p>Precision agriculture represents a data-driven approach to farming that leverages modern technologies to optimize field-level management. This method relies on the integration of several key technologies:
+
+                Global Positioning System (GPS): GPS technology allows farmers to precisely determine the location of their farming equipment and monitor their movements in real-time. This data is invaluable for tasks such as accurate planting, harvesting, and navigation.
+                
+                Geographic Information Systems (GIS): GIS software is employed to create detailed maps of agricultural fields. These maps provide valuable insights into soil composition, topography, and other critical factors, helping farmers make informed decisions about crop management.
+                
+                Remote Sensing: Remote sensing technologies, including satellite imagery and aerial drones, are utilized to collect vast amounts of data about crop health, moisture levels, and overall field conditions. This data assists farmers in identifying potential issues early on, such as pest infestations or nutrient deficiencies.
+                </p></b> 
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="section">
+            
+          <div class="text">
+            <a href="https://youtu.be/v3YcZtlVrls?si=qn5eEvypnS6Gh4Bj"> <button class="bttn">For Video</button></a>
+
+            <h1>Drones (UAVs) in Agriculture</h1>
+            <b><p>Unmanned Aerial Vehicles (UAVs), commonly referred to as drones, have emerged as a game-changer in agriculture. Drones equipped with high-resolution cameras and other sensors are deployed to capture detailed aerial images of farmland. The applications of drones in agriculture are diverse:
+
+                Crop Monitoring: Drones provide farmers with real-time visual data on crop health, allowing for the early detection of diseases, stress factors, or pests. This enables targeted interventions and reduces the need for excessive pesticide use.
+                
+                Field Mapping: Aerial imagery generated by drones can be used to create 3D maps of fields, aiding in precise planting and irrigation practices. These maps also facilitate the creation of prescription maps for variable rate applications of fertilizers and pesticides.
+                
+                Livestock Management: Drones can be used for monitoring livestock, helping ranchers keep track of herd health and behavior. They can also be used to locate and assess the condition of animals in remote or rugged terrain.
+                </p></b>
+        </div>
+          <img class="image" src="drones.webp" alt="Image 1">
+        </div>
+      </div>
+      <div class="container">
+        <div class="section">
+          <img class="image" src="satellite solution.jpg" alt="Image 3">
+          <div class="text1">
+            <a href="https://youtu.be/Tl1YkbdcEgU?si=0ZFF7Xvb141iZS3K"> <button class="bttn">For Video</button></a>
+
+            <h1>Satellite Imagery and Remote Sensing</h1>
+            <b><p>
+                Satellite technology has advanced significantly, enabling farmers to access comprehensive data about their agricultural lands. Key applications include:
+    
+                Vegetation Health Analysis: Satellites provide a macroscopic view of large agricultural areas, allowing for the monitoring of vegetation health. This includes tracking crop growth, detecting stress factors, and assessing overall plant vigor.
+    
+                Moisture Level Monitoring: Satellites equipped with advanced sensors can measure soil moisture levels. This information is crucial for optimizing irrigation strategies and conserving water resources.
+    
+                Early Warning Systems: Satellites can detect environmental changes such as weather patterns and climate conditions. This data helps farmers prepare for and mitigate potential issues, such as droughts or excessive rainfall.</p></b> 
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="section">
+            
+          <div class="text">
+            <a href="https://youtu.be/RFl1lAGT1ow?si=xjPHIYDoLNG6ROwJ"> <button class="bttn">For Video</button></a>
+
+            <h1>IoT Sensors and Smart Farming</h1>
+            <b><p>
+                Internet of Things (IoT) sensors have become an integral part of modern agriculture. These small, interconnected devices are strategically placed throughout farms to monitor various parameters:
+        
+                Soil Health: IoT sensors measure soil moisture, temperature, and nutrient levels, providing real-time data that assists in making precise decisions about irrigation and fertilization.
+                
+                Weather Conditions: IoT devices collect weather data, helping farmers anticipate changes in temperature, humidity, and precipitation. This information is crucial for planning planting and harvesting schedules.
+                
+                Animal Behavior: In livestock farming, IoT sensors are used to track the behavior of animals. This includes monitoring feeding patterns, activity levels, and health indicators, allowing for early intervention in case of health issues.
+                </p></b>
+    </div>
+          <img class="image" src="Iot-Agriculture.jpg" alt="Image 1">
+        </div>
+      </div>
+      <div class="container">
+        <div class="section">
+          <img class="image" src="robotic-farm-equipment.avif" alt="Image 3">
+          <div class="text1">
+            <a href="https://youtu.be/K-FvYZv785U?si=DoZb_camKmUwN7RR"> <button class="bttn">For Video</button></a>
+
+            <h1>Autonomous and Robotic Farm Equipment</h1>
+            <p><b>
+                The agricultural machinery sector has witnessed a significant transformation with the advent of autonomous and robotic farm equipment. These machines are equipped with advanced technologies like AI and machine learning to perform a wide range of tasks:
+    
+                Planting and Harvesting: Autonomous planters and harvesters can accurately sow seeds and gather crops without human intervention. They use sensors and algorithms to navigate fields and optimize their operations.
+    
+                Weed Control: Robotic weeders are designed to identify and remove weeds while sparing crops. They use computer vision and AI to distinguish between plants and weeds.
+    
+                Data-Driven Decision-Making: These machines collect data on soil conditions, crop health, and yield estimates, enabling farmers to make data-driven decisions for improved crop management.</b></p>
+          </div>
+        </div>
+      </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="text">
+        <a href="https://youtu.be/hCQHwimJFGM?si=GFo-4PanwzM_X8LI"> <button class="bttn">For Video</button></a>
+
+        <h1>Vertical Farming and Hydroponics</h1>
+        <b><p>
+            Vertical farming and hydroponics are innovative methods of cultivation that are gaining popularity, especially in urban areas with limited space. These techniques involve:
+    
+            Controlled Environments: Vertical farms use controlled environments with precise control over temperature, humidity, and light. Hydroponic systems grow plants without soil, using nutrient-rich water solutions.
+    
+            LED Lighting: Advanced LED lighting systems are employed to provide the exact spectrum of light needed for optimal plant growth. This technology allows for year-round cultivation and faster growth rates.
+    
+            Space Efficiency: Vertical farming utilizes vertical stacking of growing trays or shelves, making the most of available space. Hydroponic systems use less water compared to traditional soil-based farming.
+    
+            </p></b>
+        </div>
+      <img class="image" src="Vertical-farms.jpg" alt="Image 1">
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      <img class="image1" src="CRISPR.jpg" alt="Image 1">
+      <div class="text">
+        <a href="https://youtu.be/pVIVSpUgR44?si=_Q5yG57if1lhv9HW"> <button class="bttn">For Video</button></a>
+
+        
+        <h1>Genetic Engineering and CRISPR Technology</h1>
+        <p><b>
+            Advancements in genetic engineering and CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) technology have revolutionized crop breeding and modification:
+
+            Disease Resistance: Researchers can engineer crops to be resistant to specific diseases and pests, reducing the need for chemical pesticides.
+
+            Drought Tolerance: Genetic modifications can enhance a plant's ability to withstand drought conditions, ensuring more stable yields in water-scarce regions.
+
+            Nutrient Enhancement: Crop genetics can be modified to increase nutrient content, addressing nutritional deficiencies in certain staple foods.
+        </b></p>
+      </div>
+      
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      
+      <div class="text1">
+        <a href="https://youtu.be/6ImFBrRuGG0?si=YAH2mPQrqL4kQZXe"> <button class="bttn">For Video</button></a>
+
+        <h1>Blockchain and Traceability Systems</h1>
+        <b><p>
+            The implementation of blockchain technology and traceability systems in agriculture is improving transparency and trust within the supply chain:
+    
+            Food Safety: Blockchain allows for the tracking of food products from farm to table, making it easier to trace the source of foodborne illnesses and ensuring food safety.
+    
+            Supply Chain Efficiency: Transparent supply chains reduce inefficiencies and waste, as stakeholders can quickly identify and address bottlenecks or issues.
+    
+            Consumer Confidence: Traceability systems empower consumers to verify the origin and quality of the food they purchase, promoting confidence in the products they buy.
+        </p></b>
+      </div>
+      <img class="image" src="Traceability-in-Agriculture.jpg" alt="Image 3">
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      <img class="image" src="AI in agriculture.png" alt="Image 1">
+      <div class="text">
+        <a href="https://youtu.be/_tijHjup-gM?si=rjyRGrhf2s43x40v"> <button class="bttn">For Video</button></a>
+
+        <h1>AI and Machine Learning for Crop Analysis</h1>
+        <p><b>
+            Artificial intelligence (AI) and machine learning technologies are being harnessed to analyze vast datasets from the field:
+
+            Crop Health Monitoring: AI algorithms can process drone and satellite imagery to identify subtle changes in crop health and suggest interventions.
+
+            Yield Predictions: Machine learning models can predict crop yields based on historical and real-time data, enabling better production planning.
+
+            Recommendations for Farming Practices: AI-driven systems offer personalized recommendations for planting, irrigation, and harvesting, optimizing crop management.
+        </b></p>
+</div>
+      
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="text1">
+        <a href=""> <button class="bttn">For Video</button></a>
+
+        <h1>Aquaponics and Aeroponics</h1>
+        <b><p>
+            Aquaponics and aeroponics are innovative soilless cultivation methods that are particularly suitable for resource-constrained environments:
+    
+            Aquaponics: This system combines fish farming with plant cultivation. Fish waste provides nutrients for plants, and the plants help purify the water for the fish, creating a sustainable closed-loop system.
+    
+            Aeroponics: In aeroponics, plants are grown in an air or mist environment, with their roots suspended in the air. Nutrient-rich mist is periodically sprayed on the roots, promoting rapid growth.
+    
+            Resource Efficiency: Both methods use significantly less water and space compared to traditional agriculture, making them valuable options for urban farming and areas with water scarcity.</p></b>
+      </div>
+      <img class="image2" style="height: 50vh; border-radius: 80px;" src="aquaphonic-system.jpg" alt="Image 3">
+    </div>
+  </div>
+   <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <script>
+        function searchHeading() {
+            
+            var searchTerm = document.getElementById("search-input").value.toLowerCase();
+            
+            
+            var headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6,p");
+
+            
+            for (var i = 0; i < headings.length; i++) {
+                var headingText = headings[i].textContent.toLowerCase();
+
+                
+                if (headingText.includes(searchTerm)) {
+                    headings[i].scrollIntoView({ behavior: "smooth", block: "start" });
+                    return; 
+                }
+            }
+
+            alert("Keyword not found.");
+        }
+
+        document.getElementById("search-button").addEventListener("click", searchHeading);
+    </script>
+    <script>
+        const elements = document.querySelectorAll('.container');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: .4
+        }
+        const callbacks = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting){
+                    entry.target.classList.add('active');
+                }
+            });
+        }
+        let observer = new IntersectionObserver(callbacks, options);
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
